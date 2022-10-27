@@ -35,7 +35,7 @@ class YOLO:
 
         # load model
         try:
-            self.model = torch.hub.load('ultralytics/yolov5', 'custom', path='fire.pt',force_reload=True)  # local model
+            self.model = torch.load('local_model.pt')  # local model
         except:
             raise Exception("Failed to load model")
 
@@ -102,7 +102,7 @@ def yolo_detections_to_norfair_detections(
 
 parser = argparse.ArgumentParser(description="Track objects in a video.")
 parser.add_argument(
-    "--img-size", type=int, default="720", help="YOLOv7 inference size (pixels)"
+    "--img-size", type=int, default="720", help="YOLOv5 inference size (pixels)"
 )
 parser.add_argument(
     "--conf-threshold",
@@ -111,7 +111,7 @@ parser.add_argument(
     help="YOLOv7 object confidence threshold",
 )
 parser.add_argument(
-    "--iou-threshold", type=float, default="0.40", help="YOLOv7 IOU threshold for NMS"
+    "--iou-threshold", type=float, default="0.40", help="YOLOv5 IOU threshold for NMS"
 )
 parser.add_argument(
     "--classes",
