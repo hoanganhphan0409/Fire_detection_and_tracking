@@ -215,8 +215,8 @@ def main_function(device = 'CAMERA_LAPTOP',url =''):
 
         tracked_objects = tracker.update(detections=detections)
         for i in range(len(tracked_objects)):
-                time_track[tracked_objects[i].id] = time_track.get(tracked_objects[i].id, 0) + 1
-                if (time_track[tracked_objects[i].id]/int(fps)>5.0):
+                time_track[tracked_objects[i].id] = time_track.get(tracked_objects[i].id, time.time()) 
+                if (time.time()-time_track[tracked_objects[i].id]>5.0):
                     cv2.putText(frame, "Warning", (450, 70), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
                     sendWarning()
         new_frame_time = time.time()
