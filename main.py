@@ -34,10 +34,10 @@ class YOLO:
             device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
         # load model
-        try:
-            self.model = torch.load('local_model.pt')  # local model
-        except:
-            raise Exception("Failed to load model")
+        # try:
+        self.model = torch.hub.load('ultralytics/yolov5', 'custom', path='fire.pt',force_reload=True)  # local model
+        # except:
+        #     raise Exception("Failed to load model")
 
     def __call__(
         self,
@@ -108,7 +108,7 @@ parser.add_argument(
     "--conf-threshold",
     type=float,
     default="0.2",
-    help="YOLOv7 object confidence threshold",
+    help="YOLOv5 object confidence threshold",
 )
 parser.add_argument(
     "--iou-threshold", type=float, default="0.40", help="YOLOv5 IOU threshold for NMS"
