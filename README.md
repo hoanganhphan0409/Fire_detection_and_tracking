@@ -13,6 +13,10 @@ There are 3 options:
 - You can use the phone camera for real time (Using DroidCam App)
 - You can upload your own video
 
+## Training model
+
+![results](https://user-images.githubusercontent.com/89737507/200114697-2747af0f-967a-4318-9a79-197ce7688725.png)
+
 ## Run code
 Start GUI:
 ```python
