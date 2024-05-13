@@ -1,6 +1,6 @@
 # Fire detection and tracking
 ## Introduction
-In this project i will use two algorithms: YOLOv5 and tracking(norfair). First, our model will detect the position of the fire in each frame of video with YOLOv5. After detecting it, we will use a tracking algorithm (norfair) to observe the position of each fire. If the fire has gone over the custom thresholds, the fire will warn users about a potential fire. Otherwise, the system will not warn the user.
+In this project i will use two algorithms: YOLOv5 and tracking(norfair). First, my model will detect the position of the fire in each frame of video with YOLOv5. After detecting it, i will use a tracking algorithm (norfair) to observe the position of each fire. If the fire has gone over the custom thresholds, the fire will warn users about a potential fire. Otherwise, the system will not warn the user.
 
 <img width="720" alt="Untitled1" src="https://user-images.githubusercontent.com/89737507/198232986-69f35347-7d1c-48c2-adfe-d20a5f8ae07b.png">
 
